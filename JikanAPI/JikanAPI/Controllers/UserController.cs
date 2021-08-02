@@ -103,7 +103,14 @@ namespace JikanAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a user by id. Requires Admin Access.
+        /// </summary>
+        /// <response code="200">If successfully deleted.</response>
+        /// <response code="500">If there is another error.</response> 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult DeleteUser(int id)
         {
             try

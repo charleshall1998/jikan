@@ -459,6 +459,11 @@ namespace JikanAPI.Service
             _orderRepo.DeleteOrder(id);
         }
 
+        /// <summary>
+        /// Deletes a user by its id.
+        /// </summary>
+        /// <param name="id">The id of the user to be deleted.</param>
+        /// <exception cref="InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         public void DeleteUser(int id)
         {
             if (id <= 0)
