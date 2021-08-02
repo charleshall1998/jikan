@@ -1,9 +1,7 @@
 ﻿using JikanAPI.Models;
 using JikanAPI.Repos.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace JikanAPI.Repos.InMem
 {

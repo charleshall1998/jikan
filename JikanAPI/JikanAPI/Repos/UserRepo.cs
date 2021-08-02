@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace JikanAPI.Repos
 {
@@ -17,6 +16,7 @@ namespace JikanAPI.Repos
         {
             _context = context;
         }
+
         public List<User> GetAllUsers()
         {
             return _context.Users.ToList();

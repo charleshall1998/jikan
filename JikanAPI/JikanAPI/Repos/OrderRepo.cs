@@ -4,7 +4,6 @@ using JikanAPI.Repos.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace JikanAPI.Repos
 {
@@ -33,6 +32,7 @@ namespace JikanAPI.Repos
 
             return toAdd.Id;
         }
+
         public Order GetOrderById(int id)
         {
             if (id <= 0)
@@ -47,6 +47,7 @@ namespace JikanAPI.Repos
 
             return toReturn;
         }
+
         public List<Order> GetAllOrders()
         {
             List<Order> toReturn = _context.Orders.ToList();

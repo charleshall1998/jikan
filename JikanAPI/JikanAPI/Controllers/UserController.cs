@@ -1,14 +1,9 @@
 ﻿using JikanAPI.Models.ViewModels.Requests;
-using JikanAPI.Repos;
-using JikanAPI.Service;
 using JikanAPI.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace JikanAPI.Controllers
 {
