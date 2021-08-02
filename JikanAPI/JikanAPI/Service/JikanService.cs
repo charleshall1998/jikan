@@ -93,7 +93,9 @@ namespace JikanAPI.Service
         /// <summary>
         /// Attempts to register a user with the provided user information.
         /// </summary>
-        /// <param name="vm">A RegisterUserViewModel representing a username, email, name, and password.</param>  
+        /// <param name="vm">A RegisterUserViewModel representing a username, email, name, and password.</param>
+        /// <exception cref="ArgumentNullException">Thrown if the username, email, name, or password is null.</exception>
+        /// <exception cref="InvalidUsernameException">Thrown if the username provided is already taken.</exception>
         public void RegisterUser(RegisterUserViewModel vm)
         {
             if (vm.Username == null)
@@ -138,6 +140,8 @@ namespace JikanAPI.Service
         /// </summary>
         /// <param name="vm">A LoginViewModel representing a username and password.</param>  
         /// <returns>The generated token string.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if the username or password is null.</exception>
+        /// <exception cref="InvalidPasswordException">Thrown if the password does not match the username provided.</exception>
         public string Login(LoginViewModel vm)
         {
             if (vm.Username == null)
@@ -170,6 +174,10 @@ namespace JikanAPI.Service
         /// </summary>
         /// <param name="toAdd">The watch to be added</param>  
         /// <returns>The watch that was added.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if the name or type of the watch to be added is null.</exception>
+        /// <exception cref="InvalidNameException">Thrown if the name is empty, white spaces, or greater than 50 characters.</exception>
+        /// <exception cref="InvalidTypeException">Thrown if the type is empty, white spaces, or greater than 50 characters.</exception>
+        /// <exception cref="InvalidPriceException">Thrown if the precision or scale of the price of the watch is not correct.</exception>
         public int AddWatch(Watch toAdd)
         {
             if (toAdd.Name == null)
