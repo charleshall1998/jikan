@@ -1,0 +1,11 @@
+#watch {
+    width: 9%;
+}
+
+#price, #quantity, #delete {
+    width: 3%;
+}
+
+#quantity-select {
+    width: 50%;
+}

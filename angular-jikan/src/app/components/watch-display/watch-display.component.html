@@ -1,0 +1,14 @@
+  <div class="col mb-5">
+    <div class="card">
+      <a routerLink="/watch/detail/{{watch.id}}">
+        <img src="{{watch.imageUrl}}" class="card-img-top" alt="" style="width: 300px; height: 300px;">
+      </a>
+      <div class="card-body">
+        <a routerLink="/watch/detail/{{watch.id}}">
+          <h5 class="card-title">{{watch.name}}</h5>
+          <p class="card-text">${{watch.price}}.00</p>
+        </a>
+        <app-add-to-cart [watch]="watch"></app-add-to-cart>
+      </div>
+    </div>
+  </div>

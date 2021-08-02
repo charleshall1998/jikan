@@ -1,0 +1,65 @@
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <div *ngIf="signedIn" class="alert alert-success" role="alert">
+      Sign-in successful!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <h1 class="display-4 font-weight-normal">Welcome</h1>
+    <p class="lead font-weight-normal">Add an excellent time piece to your collection.</p>
+    <a class="btn btn-outline-secondary" routerLink="/watches">Shop now</a>
+  </div>
+</div>
+
+<app-carousel></app-carousel>
+
+<br>
+
+  <div class="container marketing">
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Protect your investment?<span class="text-muted"> We've got you covered.</span></h2>
+        <p class="lead">With every watch you purchase we include a 2 Year Warranty to protect your investment and ensure you feel safe with your new watch.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="../../../assets/images/warranty.jpg" class="rounded" alt="Warranty">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Shipping Costs?<span class="text-muted"> We've also got you covered.</span></h2>
+        <p class="lead">In order to show our appreciation, we make sure your purchase is free of shipping. You choosing our brand to purchase your next watch is enough thanks, so we'll cover the costs.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="../../../assets/images/shipping.jpg" class="rounded" alt="Shipping">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Not satisfied?<span class="text-muted"> Guess what.</span></h2>
+        <p class="lead">If you haven't noticed, there is a pattern with our purchase policy. If you are not satisfied with the condition of your watch, or just the watch in general, we will accept your return free of cost.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="../../../assets/images/return.jpg" class="rounded" alt="Returns">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+  </div>
+
+  <br>
+

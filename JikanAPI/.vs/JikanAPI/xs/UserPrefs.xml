@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{7F7831FF-26FD-4FC1-BFF3-1A7B3FEC8973}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="JikanAPI/Models/Watch.cs">
+    <Files>
+      <File FileName="JikanAPI/Repos/JikanInMemDao.cs" Line="1" Column="1" />
+      <File FileName="JikanAPI/Controllers/JikanController.cs" />
+      <File FileName="JikanAPI/Models/Watch.cs" Line="9" Column="44" />
+      <File FileName="JikanAPI/Models/EmptyEnumeration.cs" Line="9" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="JikanAPI" expanded="True">
+            <Node name="JikanAPI" expanded="True">
+              <Node name="Models" expanded="True">
+                <Node name="Watch.cs" selected="True" />
+              </Node>
+              <Node name="Repos" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.JikanAPI FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

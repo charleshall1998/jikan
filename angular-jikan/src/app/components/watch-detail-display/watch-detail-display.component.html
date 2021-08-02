@@ -1,0 +1,27 @@
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">{{watch.name}}
+  </h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-6">
+      <img class="img-fluid" src="{{watch.imageUrl}}" alt="">
+    </div>
+
+    <div class="col-md-6">
+      <h5 class="my-3">${{watch.price}}.00</h5>
+      <h5>{{watch.type}}</h5>
+      <hr>
+      <p>{{watch.description}}</p>
+      <app-add-to-cart [watch]="watch"></app-add-to-cart>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->

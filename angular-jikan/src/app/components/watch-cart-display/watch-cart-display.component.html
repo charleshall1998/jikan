@@ -1,0 +1,18 @@
+<tr>
+    <td id="watch" class="border-0 align-middle" colspan="1">
+      <div class="p-2">
+        <img src="{{watch.imageUrl}}" alt="" width="70" class="img-fluid rounded shadow-sm">
+        <div class="ml-3 d-inline-block align-middle">
+          <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{watch.name}}</a></h5><span class="text-muted font-weight-normal font-italic d-block">{{watch.type}}</span>
+        </div>
+      </div>
+    </td>
+    <td id="price" class="border-0 align-middle" colspan="1"><strong>{{watchTotalPrice | currency}}</strong></td>
+    <td id="quantity" class="border-0 align-middle" colspan="1">
+      <select id="quantity-select" class="form-control" #quantitySelect (change)="changeQuantity(quantitySelect.value)">
+        <option *ngFor='let number of [1,2,3,4,5]' [selected]="number === quantity" [value]="number">{{number}}</option>    
+      </select>
+    </td>
+    <td id="delete" class="border-0 align-middle" colspan="1"><button class="btn btn-outline-secondary" (click)="removeFromCart(watch)">Delete</button></td>
+</tr>
+<hr>

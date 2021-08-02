@@ -1,0 +1,25 @@
+<div *ngIf="containsOrders; else elseBlock" class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+      <app-order-display *ngFor="let order of orders" [order]="order">
+      </app-order-display>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+  <div class="elseBlock">
+    <br>
+    <br>    
+    <br>
+    <br>
+    <br>
+    <h2>You have not placed any orders yet.</h2>
+    <p>Visit our shop and place an order.</p>
+    <br>
+    <br>
+    <a class="btn btn-outline-secondary" routerLink="/watches">Shop now</a>
+    <br>
+    <br>
+    <br>
+
+  </div>  
+</ng-template>

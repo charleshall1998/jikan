@@ -1,0 +1,64 @@
+<div id="contactDiv">
+    <section class="mb-auto">
+    
+        <div class="row">
+    
+            <!--Grid column-->
+            <div class="col-md-9 mb-md-0 mb-5">
+                <form id="contactForm" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                    <div class="row">
+    
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="name">Full Name</label>
+                                <input class="form-control" id = "name" type="text" placeholder="Enter Full Name" name="name" ngModel required #name="ngModel">
+                                <div class="help is-error" *ngIf="name.invalid && name.touched" style = "font-style: italic;">
+                                *Full Name is Required*
+                                </div>
+                            </div>
+                        </div>
+    
+                        <br>
+    
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="email">Email Address</label>
+                                <input class="form-control" id = "email" type="text" placeholder="Enter Valid Email" email name="email" ngModel required #email="ngModel">
+                                <div class="help is-error" *ngIf="email.invalid && email.touched" style = "font-style: italic;">
+                                *A Valid Email is Required*
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <br>
+    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id = "message" placeholder="Message" name="messages" ngModel required #messages="ngModel"></textarea>
+                                <div class="help is-error" *ngIf="messages.invalid && messages.touched" style = "font-style: italic;">
+                                *A Message is Required* 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <br>
+    
+                    <input class="btn btn-primary btn-lg" id="submit" type="submit" value="Send Message" [disabled] = "contactForm.invalid">
+    
+                    <br>
+                    <div id = "messageSent"></div> 
+    
+                </form>
+                
+            </div>
+    
+        </div>
+    
+    </section>
+</div>
+<br>

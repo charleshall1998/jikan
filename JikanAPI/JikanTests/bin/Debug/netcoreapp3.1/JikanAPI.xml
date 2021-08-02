@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JikanAPI</name>
+    </assembly>
+    <members>
+        <member name="M:JikanAPI.Controllers.OrderController.AddOrder(JikanAPI.Models.Order)">
+            <summary>
+            Adds an order.
+            </summary>
+            <param name="order">The order to be added.</param>  
+            <returns>The order that was added.</returns>
+            <response code="200">Returns the newly added order.</response>
+            <response code="400">If the order is null</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.OrderController.GetOrderById(System.Int32)">
+            <summary>
+            Gets an order by its id.
+            </summary>
+            <param name="id">The id of the order to be searched.</param>  
+            <returns>The order with the corresponding id.</returns>
+            <response code="200">Returns the order with the corresponding id.</response>
+            <response code="500">If there is another error.</response>
+        </member>
+        <member name="M:JikanAPI.Controllers.OrderController.GetAllOrders">
+            <summary>
+            Gets all orders for a particular user.
+            </summary>
+            <returns>A list of all orders for a particular user. If Admin, returns all orders.</returns>
+            <response code="200">Returns a list of all orders for a particular user. If Admin, returns all orders.</response>
+            <response code="500">If there is another error.</response>
+        </member>
+        <member name="M:JikanAPI.Controllers.OrderController.DeleteOrder(System.Int32)">
+            <summary>
+            Deletes an order by its id.
+            </summary>
+            <param name="id">The id of the order to be deleted.</param>  
+            <returns>Ok status if deleted successfully.</returns>
+            <response code="200">Returns Ok status if deleted successfully.</response>
+            <response code="500">If there is another error.</response>
+        </member>
+        <member name="M:JikanAPI.Controllers.UserController.RegisterUser(JikanAPI.Models.ViewModels.Requests.RegisterUserViewModel)">
+            <summary>
+            Attempts to register a user with the provided user information.
+            </summary>
+            <param name="vm">A RegisterUserViewModel representing a username, email, name, and password.</param>  
+            <returns>A boolean indicating successful registration.</returns>
+            <response code="200">True if regsitered</response>
+            <response code="400">If the user is null</response>
+            <response code="500">If there is another error.</response>  
+        </member>
+        <member name="M:JikanAPI.Controllers.UserController.Login(JikanAPI.Models.ViewModels.Requests.LoginViewModel)">
+            <summary>
+            Attempts to login a user with given credentials.
+            </summary>
+            <param name="vm">A LoginViewModel representing a username and password.</param>  
+            <returns>An anonymous type containing a username and its associated token.</returns>
+            <response code="200">Returns the username with the authentication token. </response>
+            <response code="400">If the login credentials are null</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.UserController.GetAllUsers">
+            <summary>
+            Gets all users. Requires Admin access.
+            </summary>
+            <returns>A list of all users.</returns>
+            <response code="200">Returns a list of all users.</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.AddWatch(JikanAPI.Models.Watch)">
+            <summary>
+            Adds a watch.
+            </summary>
+            <param name="toAdd">The watch to be added</param>  
+            <returns>The watch that was added.</returns>
+            <response code="200">Returns the newly added watch.</response>
+            <response code="400">If the watch is null</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.GetWatchById(System.Int32)">
+            <summary>
+            Gets a watch by its id.
+            </summary>
+            <param name="id">The id of the watch to be searched.</param>  
+            <returns>The watch with the corresponding id.</returns>
+            <response code="200">Returns the watch with the corresponding id.</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.GetWatchByName(System.String)">
+            <summary>
+            Gets a watch by its name.
+            </summary>
+            <param name="name">The name of the watch to be searched.</param>  
+            <returns>The watch with the corresponding name.</returns>
+            <response code="200">Returns the watch with the corresponding name.</response>
+            <response code="400">If the name is null</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.GetAllWatches">
+            <summary>
+            Gets all watches.
+            </summary>
+            <returns>A list of all watches.</returns>
+            <response code="200">Returns a list of all watches.</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.GetWatchesByType(System.String)">
+            <summary>
+            Gets a list of watches of a particular type.
+            </summary>
+            <param name="type">The type of the watches to be searched.</param>  
+            <returns>A list of watches with the corresponding type.</returns>
+            <response code="200">Returns a list of watches with the corresponding type.</response>
+            <response code="400">If the type is null</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.GetWatchesByPrice(System.Decimal)">
+            <summary>
+            Gets a watch by its maximum price.
+            </summary>
+            <param name="max">The maximum price of the watch to be searched.</param>  
+            <returns>A list of watches with a price less than or equal to the maximum price.</returns>
+            <response code="200">Returns a list of watches with a price less than or equal to the maximum price.</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.EditWatch(JikanAPI.Models.Watch)">
+            <summary>
+            Edits a particular watch.
+            </summary>
+            <param name="watch">The watch to be edited.</param>  
+            <returns>The newly edited watch.</returns>
+            <response code="200">Returns the newly edited watch.</response>
+            <response code="400">If the watch is null</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.DeleteWatch(System.Int32)">
+            <summary>
+            Deletes a watch by its id.
+            </summary>
+            <param name="id">The id of the watch to be deleted.</param>  
+            <returns>Ok status</returns>
+            <response code="200">Returns if the watch is successfully deleted.</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.GetWatchesByOrderId(System.Int32)">
+            <summary>
+            Gets all watches of a particular order by an order id.
+            </summary>
+            <param name="id">The id of the order to be searched.</param>  
+            <returns>A list of watches with the associated order id.</returns>
+            <response code="200">Returns a list of watches with the associated order id.</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.GetWatchQuantityByOrderId(System.Int32)">
+            <summary>
+            Gets the quantity of a watch by an order id.
+            </summary>
+            <param name="id">The id of the order to be searched.</param>  
+            <returns>A list of watch quantities with the associated order id.</returns>
+            <response code="200">Returns a list of watch quantities with the associated order id.</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Controllers.WatchController.GetWatchQuantityPair(System.Int32)">
+            <summary>
+            Gets watch with its corresponding quantity by its order id.
+            </summary>
+            <param name="id">The id of the order to be searched.</param>  
+            <returns>A dictionary of each watch with its corresponding quantity with the associated order id.</returns>
+            <response code="200">Returns a dictionary of each watch with its corresponding quantity with the associated order id.</response>
+            <response code="500">If there is another error.</response> 
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GenerateToken(JikanAPI.Models.Auth.User)">
+            <summary>
+            Generates a unique token for a particular user.
+            </summary>
+            <param name="curUser">The current user to generate a token for.</param>  
+            <returns>The generated token string.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetUserById(System.Int32)">
+            <summary>
+            Gets a user by their id.
+            </summary>
+            <param name="id">The id of the user to be searched.</param>  
+            <returns>The user with the corresponding id.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.ValidatePassword(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Validates a given password.
+            </summary>
+            <param name="password">The id of the user to be searched.</param>
+            <param name="passwordSalt">The password salt to encode with.</param>  
+            <param name="passwordHash">The password hash to compare to.</param> 
+            <returns>True if valid password, false otherwise.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.RegisterUser(JikanAPI.Models.ViewModels.Requests.RegisterUserViewModel)">
+            <summary>
+            Attempts to register a user with the provided user information.
+            </summary>
+            <param name="vm">A RegisterUserViewModel representing a username, email, name, and password.</param>  
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.Login(JikanAPI.Models.ViewModels.Requests.LoginViewModel)">
+            <summary>
+            Attempts to login a user with given credentials and generate a unique token string.
+            </summary>
+            <param name="vm">A LoginViewModel representing a username and password.</param>  
+            <returns>The generated token string.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetAllUsers">
+            <summary>
+            Gets all users.
+            </summary>
+            <returns>A list of all users.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.AddWatch(JikanAPI.Models.Watch)">
+            <summary>
+            Adds a watch.
+            </summary>
+            <param name="toAdd">The watch to be added</param>  
+            <returns>The watch that was added.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetWatchById(System.Int32)">
+            <summary>
+            Gets a watch by its id.
+            </summary>
+            <param name="id">The id of the watch to be searched.</param>  
+            <returns>The watch with the corresponding id.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetWatchByName(System.String)">
+            <summary>
+            Gets a watch by its name.
+            </summary>
+            <param name="name">The name of the watch to be searched.</param>  
+            <returns>The watch with the corresponding name.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetAllWatches">
+            <summary>
+            Gets all watches.
+            </summary>
+            <returns>A list of all watches.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetWatchesByType(System.String)">
+            <summary>
+            Gets a list of watches of a particular type.
+            </summary>
+            <param name="type">The type of the watches to be searched.</param>  
+            <returns>A list of watches with the corresponding type.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetWatchQuantityByOrderId(System.Int32)">
+            <summary>
+            Gets the quantity of a watch by an order id.
+            </summary>
+            <param name="id">The id of the order to be searched.</param>  
+            <returns>A list of watch quantities with the associated order id.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetWatchesByOrderId(System.Int32)">
+            <summary>
+            Gets all watches of a particular order by an order id.
+            </summary>
+            <param name="id">The id of the order to be searched.</param>  
+            <returns>A list of watches with the associated order id.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetWatchQuantityPair(System.Int32)">
+            <summary>
+            Gets watch with its corresponding quantity by its order id.
+            </summary>
+            <param name="id">The id of the order to be searched.</param>  
+            <returns>A dictionary of each watch with its corresponding quantity with the associated order id.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetWatchesByPrice(System.Decimal)">
+            <summary>
+            Gets a watch by its maximum price.
+            </summary>
+            <param name="max">The maximum price of the watch to be searched.</param>  
+            <returns>A list of watches with a price less than or equal to the maximum price.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.EditWatch(JikanAPI.Models.Watch)">
+            <summary>
+            Edits a particular watch.
+            </summary>
+            <param name="toEdit">The watch to be edited.</param>  
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.DeleteWatch(System.Int32)">
+            <summary>
+            Deletes a watch by its id.
+            </summary>
+            <param name="id">The id of the watch to be deleted.</param>  
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.AddOrder(JikanAPI.Models.Order)">
+            <summary>
+            Adds an order.
+            </summary>
+            <param name="toAdd">The order to be added.</param>  
+            <returns>The order that was added.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetOrderById(System.Int32)">
+            <summary>
+            Gets an order by its id.
+            </summary>
+            <param name="id">The id of the order to be searched.</param>  
+            <returns>The order with the corresponding id.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetOrdersByUserId(System.Int32)">
+            <summary>
+            Gets all orders for a particular user.
+            </summary>
+            <returns>A list of all orders for a particular user.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.GetAllOrders">
+            <summary>
+            Gets all orders. For Admin user use.
+            </summary>
+            <returns>A list of all orders added.</returns>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.DeleteOrder(System.Int32)">
+            <summary>
+            Deletes an order by its id.
+            </summary>
+            <param name="id">The id of the order to be deleted.</param>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
+        </member>
+    </members>
+</doc>
