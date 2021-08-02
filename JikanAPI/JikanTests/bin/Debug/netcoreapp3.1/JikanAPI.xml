@@ -183,6 +183,7 @@
             </summary>
             <param name="id">The id of the user to be searched.</param>  
             <returns>The user with the corresponding id.</returns>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.ValidatePassword(System.String,System.Byte[],System.Byte[])">
             <summary>
@@ -197,7 +198,9 @@
             <summary>
             Attempts to register a user with the provided user information.
             </summary>
-            <param name="vm">A RegisterUserViewModel representing a username, email, name, and password.</param>  
+            <param name="vm">A RegisterUserViewModel representing a username, email, name, and password.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if the username, email, name, or password is null.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidUsernameException">Thrown if the username provided is already taken.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.Login(JikanAPI.Models.ViewModels.Requests.LoginViewModel)">
             <summary>
@@ -205,6 +208,8 @@
             </summary>
             <param name="vm">A LoginViewModel representing a username and password.</param>  
             <returns>The generated token string.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if the username or password is null.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidPasswordException">Thrown if the password does not match the username provided.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetAllUsers">
             <summary>
@@ -218,6 +223,10 @@
             </summary>
             <param name="toAdd">The watch to be added</param>  
             <returns>The watch that was added.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if the name or type of the watch to be added is null.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidNameException">Thrown if the name is empty, white spaces, or greater than 50 characters.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidTypeException">Thrown if the type is empty, white spaces, or greater than 50 characters.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidPriceException">Thrown if the precision or scale of the price of the watch is not correct.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetWatchById(System.Int32)">
             <summary>
@@ -225,6 +234,7 @@
             </summary>
             <param name="id">The id of the watch to be searched.</param>  
             <returns>The watch with the corresponding id.</returns>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetWatchByName(System.String)">
             <summary>
@@ -232,6 +242,8 @@
             </summary>
             <param name="name">The name of the watch to be searched.</param>  
             <returns>The watch with the corresponding name.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if the name to search by is null</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidNameException">Thrown if the name to search by is empty or white space.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetAllWatches">
             <summary>
@@ -245,6 +257,8 @@
             </summary>
             <param name="type">The type of the watches to be searched.</param>  
             <returns>A list of watches with the corresponding type.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if the type to search by is null</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidNameException">Thrown if the type to search by is empty or white space.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetWatchQuantityByOrderId(System.Int32)">
             <summary>
@@ -252,6 +266,7 @@
             </summary>
             <param name="id">The id of the order to be searched.</param>  
             <returns>A list of watch quantities with the associated order id.</returns>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetWatchesByOrderId(System.Int32)">
             <summary>
@@ -259,6 +274,7 @@
             </summary>
             <param name="id">The id of the order to be searched.</param>  
             <returns>A list of watches with the associated order id.</returns>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetWatchQuantityPair(System.Int32)">
             <summary>
@@ -266,6 +282,7 @@
             </summary>
             <param name="id">The id of the order to be searched.</param>  
             <returns>A dictionary of each watch with its corresponding quantity with the associated order id.</returns>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetWatchesByPrice(System.Decimal)">
             <summary>
@@ -273,18 +290,24 @@
             </summary>
             <param name="max">The maximum price of the watch to be searched.</param>  
             <returns>A list of watches with a price less than or equal to the maximum price.</returns>
+            <exception cref="T:JikanAPI.Exceptions.InvalidPriceException">Thrown if the precision or scale of the price of the watch is not correct.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.EditWatch(JikanAPI.Models.Watch)">
             <summary>
             Edits a particular watch.
             </summary>
             <param name="toEdit">The watch to be edited.</param>  
+            <exception cref="T:System.ArgumentNullException">Thrown if any property of the watch is null.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidNameException">Thrown if the name of the watch is empty or white space.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidTypeException">Thrown if the type of the watch is empty or white space.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidPriceException">Thrown if the precision or scale of the price of the watch is not correct.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.DeleteWatch(System.Int32)">
             <summary>
             Deletes a watch by its id.
             </summary>
-            <param name="id">The id of the watch to be deleted.</param>  
+            <param name="id">The id of the watch to be deleted.</param>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.AddOrder(JikanAPI.Models.Order)">
             <summary>
@@ -292,6 +315,9 @@
             </summary>
             <param name="toAdd">The order to be added.</param>  
             <returns>The order that was added.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if any property of the order is null.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidNameException">Thrown if the name, city, address, or email of the order is empty or white space.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidPriceException">Thrown if the precision or scale of the price of the order is not correct.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetOrderById(System.Int32)">
             <summary>
@@ -299,12 +325,14 @@
             </summary>
             <param name="id">The id of the order to be searched.</param>  
             <returns>The order with the corresponding id.</returns>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetOrdersByUserId(System.Int32)">
             <summary>
             Gets all orders for a particular user.
             </summary>
             <returns>A list of all orders for a particular user.</returns>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetAllOrders">
             <summary>

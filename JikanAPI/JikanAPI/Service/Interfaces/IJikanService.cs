@@ -27,5 +27,6 @@ namespace JikanAPI.Service.Interfaces
         Dictionary<Watch, int> GetWatchQuantityPair(int id);
         string Login(LoginViewModel vm);
         void RegisterUser(RegisterUserViewModel vm);
+        void DeleteUser(int id);
     }
 }

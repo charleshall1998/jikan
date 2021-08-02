@@ -27,6 +27,11 @@ namespace JikanAPI.Repos.InMem
             return toAdd.Id;
         }
 
+        public void DeleteUser(int id)
+        {
+            _allUsers.RemoveAll(u => u.Id == id);
+        }
+
         public List<User> GetAllUsers()
         {
             return _allUsers;

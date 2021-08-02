@@ -147,5 +147,11 @@ namespace JikanTests
 
             Assert.Throws<InvalidPasswordException>(() => _service.Login(toLogin));
         }
+
+        [Test]
+        public void DeleteUserInvalidIdNegativeTest()
+        {
+            Assert.Throws<InvalidIdException>(() => _service.DeleteUser(-1));
+        }
     }
 }

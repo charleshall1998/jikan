@@ -459,5 +459,12 @@ namespace JikanAPI.Service
             _orderRepo.DeleteOrder(id);
         }
 
+        public void DeleteUser(int id)
+        {
+            if (id <= 0)
+                throw new InvalidIdException("Invalid Id, cannot be less than or equal to 0.");
+
+            _userRepo.DeleteUser(id);
+        }
     }
 }

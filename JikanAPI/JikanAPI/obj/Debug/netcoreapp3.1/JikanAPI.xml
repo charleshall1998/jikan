@@ -198,7 +198,9 @@
             <summary>
             Attempts to register a user with the provided user information.
             </summary>
-            <param name="vm">A RegisterUserViewModel representing a username, email, name, and password.</param>  
+            <param name="vm">A RegisterUserViewModel representing a username, email, name, and password.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if the username, email, name, or password is null.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidUsernameException">Thrown if the username provided is already taken.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.Login(JikanAPI.Models.ViewModels.Requests.LoginViewModel)">
             <summary>
@@ -206,6 +208,8 @@
             </summary>
             <param name="vm">A LoginViewModel representing a username and password.</param>  
             <returns>The generated token string.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if the username or password is null.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidPasswordException">Thrown if the password does not match the username provided.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetAllUsers">
             <summary>
@@ -219,6 +223,10 @@
             </summary>
             <param name="toAdd">The watch to be added</param>  
             <returns>The watch that was added.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if the name or type of the watch to be added is null.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidNameException">Thrown if the name is empty, white spaces, or greater than 50 characters.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidTypeException">Thrown if the type is empty, white spaces, or greater than 50 characters.</exception>
+            <exception cref="T:JikanAPI.Exceptions.InvalidPriceException">Thrown if the precision or scale of the price of the watch is not correct.</exception>
         </member>
         <member name="M:JikanAPI.Service.JikanService.GetWatchById(System.Int32)">
             <summary>

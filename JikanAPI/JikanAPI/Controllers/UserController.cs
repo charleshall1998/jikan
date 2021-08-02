@@ -103,5 +103,19 @@ namespace JikanAPI.Controllers
             }
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUser(int id)
+        {
+            try
+            {
+                _service.DeleteUser(id);
+                return Ok();
+            }
+            catch(Exception)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
     }
 }

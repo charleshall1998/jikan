@@ -171,5 +171,41 @@ namespace JikanTests
             Assert.Throws<InvalidNameException>(() => _userRepo.GetRoleByName("Test"));
         }
 
+        [Test]
+        public void DeleteUserTest()
+        {
+            User toAdd = new User
+            {
+                Username = "TEST USERNAME",
+                Email = "test@test.com",
+                Name = "TEST NAME"
+            };
+
+            _userRepo.AddUser(toAdd);
+
+            List<User> toCheck = _userRepo.GetAllUsers();
+
+            Assert.AreEqual(1, toCheck.Count);
+
+            _userRepo.DeleteUser(toAdd.Id);
+
+            List<User> toCheck2 = _userRepo.GetAllUsers();
+
+            Assert.AreEqual(0, toCheck2.Count);
+
+        }
+
+        [Test]
+        public void DeleteUserInvalidIdNegativeTest()
+        {
+            Assert.Throws<InvalidIdException>(() => _userRepo.DeleteUser(-1));
+        }
+
+        [Test]
+        public void DeleteUserInvalidIdUSERDNETest()
+        {
+            Assert.Throws<UserNotFoundException>(() => _userRepo.DeleteUser(10));
+        }
+
     }
 }

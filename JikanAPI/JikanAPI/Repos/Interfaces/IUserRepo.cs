@@ -13,5 +13,6 @@ namespace JikanAPI.Repos.Interfaces
         User GetUserById(int id);
         Role GetRoleByName(string role);
         User GetUserByUsername(string username);
+        void DeleteUser(int id);
     }
 }

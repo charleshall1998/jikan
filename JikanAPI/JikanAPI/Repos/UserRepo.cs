@@ -75,5 +75,19 @@ namespace JikanAPI.Repos
             return toReturn;
         }
 
+        public void DeleteUser(int id)
+        {
+            if (id <= 0)
+                throw new InvalidIdException("Invalid id.");
+
+            User toDelete = _context.Users.Find(id);
+
+            if (toDelete == null)
+                throw new UserNotFoundException("User with that id cannot be found.");
+
+            _context.Attach(toDelete);
+            _context.Remove(toDelete);
+            _context.SaveChanges();
+        }
     }
 }
