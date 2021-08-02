@@ -68,6 +68,13 @@
             <response code="200">Returns a list of all users.</response>
             <response code="500">If there is another error.</response> 
         </member>
+        <member name="M:JikanAPI.Controllers.UserController.DeleteUser(System.Int32)">
+            <summary>
+            Deletes a user by id. Requires Admin Access.
+            </summary>
+            <response code="200">If successfully deleted.</response>
+            <response code="500">If there is another error.</response> 
+        </member>
         <member name="M:JikanAPI.Controllers.WatchController.AddWatch(JikanAPI.Models.Watch)">
             <summary>
             Adds a watch.
@@ -345,6 +352,13 @@
             Deletes an order by its id.
             </summary>
             <param name="id">The id of the order to be deleted.</param>
+            <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
+        </member>
+        <member name="M:JikanAPI.Service.JikanService.DeleteUser(System.Int32)">
+            <summary>
+            Deletes a user by its id.
+            </summary>
+            <param name="id">The id of the user to be deleted.</param>
             <exception cref="T:JikanAPI.Exceptions.InvalidIdException">Thrown if the id is less than or equal to 0.</exception>
         </member>
     </members>
